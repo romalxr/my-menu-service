@@ -21,11 +21,18 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	jpaModelGenVersion = '6.5.0.Final'
+	hypersistenceVersion = '3.7.5'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "io.hypersistence:hypersistence-utils-hibernate-63:${hypersistenceVersion}"
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor "org.hibernate:hibernate-jpamodelgen:${jpaModelGenVersion}"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
