@@ -31,6 +31,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation "io.hypersistence:hypersistence-utils-hibernate-63:${hypersistenceVersion}"
 	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	annotationProcessor "org.hibernate:hibernate-jpamodelgen:${jpaModelGenVersion}"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
