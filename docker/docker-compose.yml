@@ -2,7 +2,7 @@ version: "3.8"
 services:
   postgres:
     image: "postgres:16.1"
-    container_name: "postgres"
+    container_name: "my_postgres"
     ports:
       - "15432:5432"
     environment:
@@ -21,3 +21,4 @@ services:
 volumes:
   db:
     driver: local
+    name: my_db
