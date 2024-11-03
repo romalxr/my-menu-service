@@ -24,6 +24,8 @@ repositories {
 ext {
 	jpaModelGenVersion = '6.5.0.Final'
 	hypersistenceVersion = '3.7.5'
+	mapstructVersion = '1.5.5.Final'
+	mapstructLombokBindingVersion = '0.2.0'
 }
 
 dependencies {
@@ -31,10 +33,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.flywaydb:flyway-core'
 	implementation "io.hypersistence:hypersistence-utils-hibernate-63:${hypersistenceVersion}"
+	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor "org.hibernate:hibernate-jpamodelgen:${jpaModelGenVersion}"
 	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	annotationProcessor "org.projectlombok:lombok-mapstruct-binding:${mapstructLombokBindingVersion}"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
 	testImplementation 'org.testcontainers:junit-jupiter'
